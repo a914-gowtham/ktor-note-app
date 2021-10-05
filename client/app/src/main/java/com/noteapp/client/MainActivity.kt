@@ -10,9 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.navigation.animation.composable
-import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
-import com.noteapp.client.composes.login.LogInScreen
 import com.noteapp.client.composes.register.RegisterScreen
 import com.noteapp.client.navigation.Screens
 import com.noteapp.client.ui.theme.TAppTheme
@@ -27,13 +25,12 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavBackStackEntry
-import androidx.navigation.NavController
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
-
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             TAppTheme {
                 // A surface container using the 'background' color from the theme
@@ -96,7 +93,7 @@ fun AppNavigation() {
 
         composable(Screens.LoginScreen.route,
             ){
-            LogInScreen {
+            RegisterScreen {
                 navController.navigate(Screens.RegisterScreen.route)
             }
         }

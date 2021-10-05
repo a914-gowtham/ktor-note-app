@@ -1,0 +1,56 @@
+// build.gradle for android libraries that contain UI
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion Config.compileSdkVersion
+        buildToolsVersion Config.buildToolsVersion
+
+            defaultConfig {
+                        minSdkVersion Config.minSdkVersion
+                        targetSdkVersion Config.targetSdkVersion
+                        versionCode Config.versionCode
+                        versionName Config.versionName
+                        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+        useIR = true
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion Dependencies.Compose.version
+    }
+
+    packagingOptions {
+        exclude("META-INF/AL2.0")
+        exclude("META-INF/LGPL2.1")
+    }
+}
+
+dependencies{
+
+    implementation Dependencies.Android.ktx
+    implementation Dependencies.Android.appCompat
+
+    implementation Dependencies.Compose.ui
+    implementation Dependencies.Compose.material
+    implementation Dependencies.Compose.tooling
+    implementation Dependencies.Compose.activity
+    implementation Dependencies.Lifecycle.runtime
+
+}

@@ -87,4 +87,7 @@ dependencies {
     androidTestImplementation(Dependencies.Testing.junitAndroid)
     androidTestImplementation(Dependencies.Testing.espresso)
     androidTestImplementation(Dependencies.Testing.junitCompose)
+    implementation(project(":login"))
+    implementation(project(":register"))
+
 }
