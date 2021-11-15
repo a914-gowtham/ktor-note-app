@@ -11,7 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.AnimatedNavHost
-import com.noteapp.client.composes.register.RegisterScreen
 import com.noteapp.client.navigation.Screens
 import com.noteapp.client.ui.theme.TAppTheme
 import androidx.compose.animation.EnterTransition
@@ -26,6 +25,8 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavBackStackEntry
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import com.gowtham.login.LoginScreen
+import com.gowtham.register.RegisterScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -93,7 +94,7 @@ fun AppNavigation() {
 
         composable(Screens.LoginScreen.route,
             ){
-            RegisterScreen {
+            LoginScreen {
                 navController.navigate(Screens.RegisterScreen.route)
             }
         }

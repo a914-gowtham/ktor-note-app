@@ -8,5 +8,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Noteapp-Client"
 include(":app")
-include(":login")
-include(":register")
+include(":core")
+include(":note")
+include(":note:register")
+include(":note:login")
+include(":components")

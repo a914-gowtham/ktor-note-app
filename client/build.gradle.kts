@@ -12,11 +12,12 @@ buildscript {
 
     repositories {
         google()
+        gradlePluginPortal()
         mavenCentral()
     }
     dependencies {
         classpath(ClassPaths.gradlePlugin)
-        classpath(ClassPaths.kotlinGradlePlugin)
+//        classpath(ClassPaths.kotlinGradlePlugin)
         classpath(ClassPaths.hiltGradlePlugin)
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31")
         // NOTE: Do not place your application dependencies here; they belong

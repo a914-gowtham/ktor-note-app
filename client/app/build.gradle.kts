@@ -43,7 +43,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Dependencies.Compose.version
+        kotlinCompilerExtensionVersion = Compose.version
     }
 
     packagingOptions {
@@ -58,36 +58,35 @@ android {
 dependencies {
 
     // android
-    implementation(Dependencies.Android.ktx)
-    implementation(Dependencies.Android.appCompat)
-    implementation(Dependencies.Android.material)
-    implementation(Dependencies.Android.crypto)
-    implementation(Dependencies.Android.splashScreen)
+    implementation(Android.ktx)
+    implementation(Android.appCompat)
+    implementation(Android.material)
+    implementation(Android.crypto)
+    implementation(Android.splashScreen)
 
     // compose
-    implementation(Dependencies.Compose.ui)
-    implementation(Dependencies.Compose.material)
-    implementation(Dependencies.Compose.tooling)
-    implementation(Dependencies.Compose.activity)
+    implementation(Compose.ui)
+    implementation(Compose.material)
+    implementation(Compose.tooling)
+    implementation(Compose.activity)
 
     // lifecycle
-    implementation(Dependencies.Lifecycle.runtime)
+    implementation(Lifecycle.runtime)
 
     // hilt
-    implementation(Dependencies.Hilt.dependency)
-    implementation(Dependencies.Hilt.compiler)
-    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.0")
+    implementation(Hilt.dependency)
+    kapt(Hilt.compiler)
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
 
-    implementation(Dependencies.Accompanist.animation)
-    implementation(Dependencies.Navigation.hilt)
+    implementation(Accompanist.animation)
+    implementation(Navigation.hilt)
 
     // testing
-    testImplementation(Dependencies.Testing.junit)
-    androidTestImplementation(Dependencies.Testing.junitAndroid)
-    androidTestImplementation(Dependencies.Testing.espresso)
-    androidTestImplementation(Dependencies.Testing.junitCompose)
-    implementation(project(":login"))
-    implementation(project(":register"))
+    testImplementation(Testing.junit)
+    androidTestImplementation(Testing.junitAndroid)
+    androidTestImplementation(Testing.espresso)
+    androidTestImplementation(Testing.junitCompose)
+    implementation(project(Modules.noteLogin))
+    implementation(project(Modules.noteRegister))
 
 }
