@@ -4,14 +4,15 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
+        maven { url = java.net.URI("https://jitpack.io") }
     }
 }
 rootProject.name = "Noteapp-Client"
 include(":app")
 include(":core")
 include(":note")
-include(":note:register")
-include(":note:login")
+include(":note:ui-register")
+include(":note:ui-login")
 include(":components")
 include(":note:note-domain")
-include(":note:home")
+include(":note:ui-home")

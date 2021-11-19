@@ -5,6 +5,6 @@ object Modules {
     const val components = ":components"
     const val constants = ":constants"
     const val note = ":note"
-    const val noteLogin = ":note:login"
-    const val noteRegister = ":note:register"
+    const val noteLogin = ":note:ui-login"
+    const val noteRegister = ":note:ui-register"
 }

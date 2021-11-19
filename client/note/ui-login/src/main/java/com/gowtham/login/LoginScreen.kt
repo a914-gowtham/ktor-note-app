@@ -1,29 +1,30 @@
-package com.gowtham.register
+package com.gowtham.login
 
-
+import android.util.Log
+import androidx.compose.foundation.background
+import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.*
+import androidx.compose.ui.graphics.Color
 import com.gowtham.components.AnnotatedClickableText
+import com.gowtham.ratingbar.RatingBar
+import com.gowtham.ratingbar.RatingBarStyle
 
 
 @Composable
-fun RegisterScreen(onLoginListener: () -> Unit) {
+fun LoginScreen(onLoginListener: () -> Unit) {
 
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -35,10 +36,10 @@ fun RegisterScreen(onLoginListener: () -> Unit) {
     ) {
 
         Text(
-            text = "create your account.",
+            text = "welcome back.",
             fontWeight = FontWeight.Bold, fontSize = 26.sp
         )
-        Text(text = "won't take more than a minute!", fontSize = 24.sp)
+        Text(text = "login with your credentials!", fontSize = 24.sp)
 
         Spacer(modifier = Modifier.weight(1f))
         OutlinedTextField(
@@ -70,21 +71,12 @@ fun RegisterScreen(onLoginListener: () -> Unit) {
             }, shape = RoundedCornerShape(18.dp)
         ) {
             Text(
-                text = "register",
+                text = "ui-login",
                 modifier =
                 Modifier.padding(vertical = 8.dp),
                 style = TextStyle(fontWeight = FontWeight.Bold,
                     fontSize = 16.sp,color = MaterialTheme.colors.background)
             )
         }
-    }
-}
-
-
-@Preview(showBackground = true)
-@Composable
-fun Preview() {
-    RegisterScreen {
-
     }
 }
