@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/note" />
             <option value="$PROJECT_DIR$/note/note-domain" />
+            <option value="$PROJECT_DIR$/note/note-interactors" />
             <option value="$PROJECT_DIR$/note/ui-home" />
             <option value="$PROJECT_DIR$/note/ui-login" />
             <option value="$PROJECT_DIR$/note/ui-register" />
