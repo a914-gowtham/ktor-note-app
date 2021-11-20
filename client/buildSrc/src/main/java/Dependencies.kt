@@ -24,7 +24,7 @@ object Android {
     const val prefs = "androidx.preference:preference-ktx:1.1.1"
     const val crypto = "androidx.security:security-crypto:1.1.0-alpha03"
     const val splashScreen = "androidx.core:core-splashscreen:1.0.0-alpha01"
-
+    const val material3 = "com.google.android.material:material:1.5.0-alpha05"
 }
 
 object DataStore {
@@ -40,7 +40,9 @@ object Lifecycle {
 
 object Compose {
     const val version = "1.0.5"
+    const val m3Version = "1.0.0-alpha01"
     const val ui = "androidx.compose.ui:ui:$version"
+    const val material3 = "androidx.compose.material3:material3:$m3Version"
     const val material = "androidx.compose.material:material:$version"
     const val tooling = "androidx.compose.ui:ui-tooling:$version"
     const val activity = "androidx.activity:activity-compose:1.3.0-beta02"

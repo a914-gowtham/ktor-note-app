@@ -41,6 +41,12 @@ android {
     }
     buildFeatures {
         compose = true
+        // Disable unused AGP features
+        buildConfig = false
+        aidl = false
+        renderScript = false
+        resValues = false
+        shaders=  false
     }
     composeOptions {
         kotlinCompilerExtensionVersion = Compose.version
@@ -60,13 +66,13 @@ dependencies {
     // android
     implementation(Android.ktx)
     implementation(Android.appCompat)
-    implementation(Android.material)
     implementation(Android.crypto)
     implementation(Android.splashScreen)
+    implementation(Android.material3)
 
     // compose
     implementation(Compose.ui)
-    implementation(Compose.material)
+    implementation(Compose.material3)
     implementation(Compose.tooling)
     implementation(Compose.activity)
 
@@ -86,6 +92,8 @@ dependencies {
     androidTestImplementation(Testing.junitAndroid)
     androidTestImplementation(Testing.espresso)
     androidTestImplementation(Testing.junitCompose)
+
+    implementation(project(Modules.core))
     implementation(project(Modules.noteLogin))
     implementation(project(Modules.noteRegister))
 

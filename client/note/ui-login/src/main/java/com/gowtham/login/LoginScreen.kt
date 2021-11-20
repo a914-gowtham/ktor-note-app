@@ -1,30 +1,30 @@
 package com.gowtham.login
 
-import android.util.Log
-import androidx.compose.foundation.background
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.*
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import com.gowtham.components.AnnotatedClickableText
-import com.gowtham.ratingbar.RatingBar
-import com.gowtham.ratingbar.RatingBarStyle
+import com.gowtham.components.DefaultButton
+import com.gowtham.components.DefaultTextField
+import com.gowtham.core.Logger
 
 
 @Composable
-fun LoginScreen(onLoginListener: () -> Unit) {
+fun LoginScreen(
+    viewModel: LoginViewModel,
+    onGotoRegClicked: () -> Unit,
+) {
 
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -42,41 +42,38 @@ fun LoginScreen(onLoginListener: () -> Unit) {
         Text(text = "login with your credentials!", fontSize = 24.sp)
 
         Spacer(modifier = Modifier.weight(1f))
-        OutlinedTextField(
-            value = email, onValueChange = {
-                email=it
-            },
-            modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(14.dp),
-            placeholder = { Text("email") },
-        )
-        Spacer(modifier = Modifier.heightIn(20.dp))
-        OutlinedTextField(
-            value = password, onValueChange = {
-                password=it
-            },
-            modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(14.dp),
-            placeholder = { Text("password") },
-            visualTransformation = PasswordVisualTransformation(),
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
-        )
-        Spacer(modifier = Modifier.weight(2f))
-        AnnotatedClickableText(onLoginListener)
-        Button(
-            modifier = Modifier.fillMaxWidth(), colors = ButtonDefaults
-                .buttonColors(backgroundColor = MaterialTheme.colors.onSurface),
-            onClick = {
-
-            }, shape = RoundedCornerShape(18.dp)
+        DefaultTextField(
+            value = email,
+            hint = "email",
+            keyboardType = KeyboardType.Email
         ) {
-            Text(
-                text = "ui-login",
-                modifier =
-                Modifier.padding(vertical = 8.dp),
-                style = TextStyle(fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp,color = MaterialTheme.colors.background)
-            )
+            email = it
         }
+        Spacer(modifier = Modifier.heightIn(20.dp))
+        DefaultTextField(
+            value = password,
+            hint = "password",
+            keyboardType = KeyboardType.Password,
+            isPassword = true
+        ) {
+            password = it
+        }
+        Spacer(modifier = Modifier.weight(2f))
+        AnnotatedClickableText(
+            title = "register",
+            desc = "don't have an account?", onBtnClicked = onGotoRegClicked
+        )
+        DefaultButton(title = "login"){
+
+        }
+    }
+}
+
+@Preview(name = "LoginScreen", showBackground = true)
+@Composable
+fun Preview() {
+    val viewModel = LoginViewModel(Logger(""), "")
+    LoginScreen(viewModel) {
+
     }
 }

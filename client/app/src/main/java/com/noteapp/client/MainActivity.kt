@@ -4,9 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.navigation.animation.composable
@@ -23,11 +23,15 @@ import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavBackStackEntry
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.gowtham.login.LoginScreen
+import com.gowtham.login.LoginViewModel
 import com.gowtham.register.RegisterScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +39,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             TAppTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
+                Surface(color = MaterialTheme.colorScheme.background) {
                     AppNavigation()
                 }
             }
@@ -94,7 +98,8 @@ fun AppNavigation() {
 
         composable(Screens.LoginScreen.route,
             ){
-            LoginScreen {
+            val viewModel: LoginViewModel = hiltViewModel()
+            LoginScreen(viewModel = viewModel) {
                 navController.navigate(Screens.RegisterScreen.route)
             }
         }

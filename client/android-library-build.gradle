@@ -2,6 +2,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: Plugins.hilt
 
 android {
     compileSdkVersion Config.compileSdkVersion
@@ -31,6 +32,12 @@ android {
     }
     buildFeatures {
         compose true
+        // Disable unused AGP features
+        buildConfig false
+        aidl false
+        renderScript false
+        resValues false
+        shaders false
     }
     composeOptions {
         kotlinCompilerExtensionVersion Compose.version
@@ -49,9 +56,12 @@ dependencies{
     implementation Android.appCompat
 
     implementation Compose.ui
+    implementation Compose.material3
     implementation Compose.material
     implementation Compose.tooling
     implementation Compose.activity
     implementation Lifecycle.runtime
 
+    implementation(Hilt.dependency)
+    kapt(Hilt.compiler)
 }
