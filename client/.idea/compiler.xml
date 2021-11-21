@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.7">
-      <module name="Noteapp-Client.app" target="11" />
-      <module name="Noteapp-Client.buildSrc" target="11" />
-      <module name="Noteapp-Client.components" target="11" />
-      <module name="Noteapp-Client.core" target="11" />
-      <module name="Noteapp-Client.note.note-domain" target="11" />
-      <module name="Noteapp-Client.note.ui-home" target="11" />
-      <module name="Noteapp-Client.note.ui-login" target="11" />
-      <module name="Noteapp-Client.note.ui-register" target="11" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="11" />
   </component>
 </project>

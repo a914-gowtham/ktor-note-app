@@ -7,4 +7,7 @@ object Modules {
     const val note = ":note"
     const val noteLogin = ":note:ui-login"
     const val noteRegister = ":note:ui-register"
+    const val noteDomain = ":note:note-domain"
+    const val noteRepos = ":note:note-repositories"
+    const val noteDataSource = ":note:note-datasource"
 }

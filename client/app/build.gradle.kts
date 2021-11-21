@@ -96,5 +96,7 @@ dependencies {
     implementation(project(Modules.core))
     implementation(project(Modules.noteLogin))
     implementation(project(Modules.noteRegister))
+    implementation(project(Modules.noteRepos))
+    implementation(project(Modules.noteDataSource))
 
 }

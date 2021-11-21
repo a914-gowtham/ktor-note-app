@@ -1,10 +1,16 @@
 const val timber = "com.jakewharton.timber:timber:4.7.1"
 
 object OkHttp {
+    const val moshiVersion = "1.12.0"
+
     const val bom = "com.squareup.okhttp3:okhttp-bom:4.9.0"
     const val dependency = "com.squareup.okhttp3:okhttp"
     const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor"
+    const val loggingInterceptorAlone = "com.squareup.okhttp3:logging-interceptor:4.9.2"
     const val retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
+    const val retrofitMoshiConverter = "com.squareup.retrofit2:converter-moshi:2.9.0"
+    const val moshi = "com.squareup.moshi:moshi-kotlin:$moshiVersion"
+    const val moshiKapt = "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
     const val converter = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0"
 }
 
