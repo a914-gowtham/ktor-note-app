@@ -1,6 +1,6 @@
 // build.gradle for android libraries that contain UI
 apply {
-    from("$rootDir/android-library-build.gradle")
+    from("$rootDir/library-build.gradle")
 }
 
 
@@ -8,7 +8,7 @@ dependencies{
     "implementation"(OkHttp.retrofit)
     "implementation"(OkHttp.retrofitMoshiConverter)
     "implementation"(OkHttp.loggingInterceptorAlone)
-    "implementation"(OkHttp.moshi)
-    "kapt"(OkHttp.moshiKapt)
+    /*"implementation"(OkHttp.moshi)  replace lotlin ser
+    "kapt"(OkHttp.moshiKapt)*/
     "implementation"(project(Modules.components))
 }

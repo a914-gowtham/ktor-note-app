@@ -20,7 +20,6 @@ import com.gowtham.components.DefaultButton
 import com.gowtham.components.DefaultTextField
 
 
-@ExperimentalMaterial3Api
 @Composable
 fun RegisterScreen(onGotoLoginPage: () -> Unit) {
 
